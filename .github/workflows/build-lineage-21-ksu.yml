@@ -30,10 +30,7 @@ jobs:
 
     - name: Apply patches
       run: |
-        cd sm8350
-        git submodule add -b v0.9.5 https://github.com/tiann/KernelSU.git
-        git submodule update --init --recursive
-        git apply ../patches/ksu.patch
+        cd sm8350 && git submodule add https://github.com/tiann/KernelSU.git && cd KernelSU && git checkout v0.9.5 && cd .. && git add KernelSU && git commit -m "Set KernelSU to v0.9.5" && git submodule update --init --recursive && git apply ../patches/ksu.patch
 
     - name: Android kernel build
       run: |
