@@ -33,7 +33,7 @@ jobs:
         cd sm8350
         git submodule add https://github.com/tiann/KernelSU.git
         cd KernelSU
-        git checkout tags/v1.0.0          
+        git checkout tags/v0.9.5          
         cd ..
         git add KernelSU                   
         git submodule update --init --recursive   
